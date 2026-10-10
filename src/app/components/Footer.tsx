@@ -10,6 +10,7 @@ const helpLinks = [
   { name: "My account", href: "/account" },
   { name: "Wishlist", href: "/wishlist" },
   { name: "Cart", href: "/cart" },
+  { name: "Photo credits", href: "/credits" },
 ];
 
 const Footer = () => {
