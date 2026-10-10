@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F9FF"/><stop offset="1" stop-color="#CFE3FF"/></linearGradient>
+<linearGradient id="scr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5AAEFF"/><stop offset="1" stop-color="#0B3B8F"/></linearGradient>
+<linearGradient id="body" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCE8F7"/></linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<ellipse cx="400" cy="520" rx="230" ry="22" fill="#0B3B8F" opacity=".15"/>
+
+<rect x="190" y="120" width="420" height="290" rx="16" fill="#0F1B33"/>
+<rect x="205" y="135" width="390" height="260" rx="6" fill="url(#scr)"/>
+<path d="M205 340 L330 240 L410 310 L500 230 L595 320 L595 395 L205 395Z" fill="#fff" opacity=".25"/>
+<path d="M120 420 H680 L650 478 Q645 490 632 490 H168 Q155 490 150 478Z" fill="url(#body)" stroke="#B9CCE8" stroke-width="3"/>
+<rect x="330" y="432" width="140" height="14" rx="7" fill="#B9CCE8"/></svg>
