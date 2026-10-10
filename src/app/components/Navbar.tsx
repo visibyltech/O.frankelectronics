@@ -136,13 +136,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      <nav aria-label="Departments" className="border-t border-ink/10">
+      <nav aria-label="Departments" className="bg-brand">
         <ul className="flex gap-1 overflow-x-auto px-4 text-sm font-medium whitespace-nowrap md:px-10 [&::-webkit-scrollbar]:hidden">
           <li>
             <Link
               href="/shop"
-              className={`block px-3 py-3 transition hover:text-brand ${
-                pathname === "/shop" && !activeCategory ? "text-brand" : "text-ink/80"
+              className={`block px-3 py-3 transition hover:bg-brand-dark ${
+                pathname === "/shop" && !activeCategory ? "bg-brand-dark text-white" : "text-white/90"
               }`}
             >
               All products
@@ -152,8 +152,8 @@ const Navbar = () => {
             <li key={department.slug}>
               <Link
                 href={`/shop?category=${department.slug}`}
-                className={`block px-3 py-3 transition hover:text-brand ${
-                  activeCategory === department.slug ? "text-brand" : "text-ink/80"
+                className={`block px-3 py-3 transition hover:bg-brand-dark ${
+                  activeCategory === department.slug ? "bg-brand-dark text-white" : "text-white/90"
                 }`}
               >
                 {department.name}
@@ -163,8 +163,8 @@ const Navbar = () => {
           <li className="ml-auto">
             <Link
               href="/contact"
-              className={`block px-3 py-3 transition hover:text-brand ${
-                pathname === "/contact" ? "text-brand" : "text-ink/80"
+              className={`block px-3 py-3 transition hover:bg-brand-dark ${
+                pathname === "/contact" ? "bg-brand-dark text-white" : "text-white/90"
               }`}
             >
               Contact

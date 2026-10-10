@@ -1,3 +1,4 @@
+import BrandsRow from "./components/BrandsRow";
 import CategoriesSection from "./components/CategoriesSection";
 import Hero from "./components/Hero";
 import ProductRail from "./components/ProductRail";
@@ -8,6 +9,7 @@ export default function Home() {
     <>
       <Hero />
       <CategoriesSection />
+      <BrandsRow />
       <ProductRail heading="New arrivals" query="sort=newest&limit=8" href="/shop" />
       <ProductRail
         heading="Hot deals"

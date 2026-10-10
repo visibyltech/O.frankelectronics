@@ -25,3 +25,6 @@ export const DEPARTMENTS = [
   { slug: "kitchen-appliances", name: "Kitchen Appliances" },
   { slug: "gadgets", name: "Gadgets & More" },
 ] as const;
+
+// Brand names shown in the "Shop by brand" row on the home page. Edit to match what you stock.
+export const BRANDS = ["LG", "Samsung", "Hisense", "HP", "Tecno", "Infinix", "Binatone", "Midea"];

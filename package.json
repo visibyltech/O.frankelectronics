@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "db:seed-admin": "node --env-file=.env.local scripts/seed-admin.mjs",
-    "db:seed-catalog": "node --env-file=.env.local scripts/seed-catalog.mjs"
+    "db:seed-catalog": "node --env-file=.env.local scripts/seed-catalog.mjs",
+    "db:seed-products": "node --env-file=.env.local scripts/seed-products.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
