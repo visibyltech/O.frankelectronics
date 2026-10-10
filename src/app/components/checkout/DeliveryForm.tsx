@@ -25,7 +25,7 @@ const fields: {
   { key: "email", label: "Email", type: "email", autoComplete: "email", placeholder: "ada@example.com" },
   { key: "phone", label: "Phone", type: "tel", autoComplete: "tel", placeholder: "+234 800 000 0000" },
   { key: "address", label: "Street address", type: "text", autoComplete: "street-address", placeholder: "5 Electronics Way, Ikeja" },
-  { key: "city", label: "City", type: "text", autoComplete: "address-level2", placeholder: "Lagos" },
+  { key: "city", label: "City", type: "text", autoComplete: "address-level2", placeholder: "Your city" },
 ];
 
 const isValid = (details: DeliveryDetails) =>

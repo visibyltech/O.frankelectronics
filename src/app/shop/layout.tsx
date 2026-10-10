@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Shop",
   description:
-    "Browse clothing, accessories, grooming and everyday essentials, checked by hand in Lagos.",
+    "Browse televisions, laptops, phones, home and kitchen appliances and gadgets from O Frank Electronics.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

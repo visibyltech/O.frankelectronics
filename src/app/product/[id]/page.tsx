@@ -247,7 +247,7 @@ export default function ProductDetailPage() {
           <dl className="mt-10 border-t border-ink/10 text-sm">
             <div className="flex justify-between gap-6 border-b border-ink/10 py-3">
               <dt className="text-ink/60">Delivery</dt>
-              <dd className="text-right text-ink">Same-day in Lagos when ordered on WhatsApp</dd>
+              <dd className="text-right text-ink">Fast and safe delivery. Ships once payment is completed</dd>
             </div>
             <div className="flex justify-between gap-6 border-b border-ink/10 py-3">
               <dt className="text-ink/60">Payment</dt>
