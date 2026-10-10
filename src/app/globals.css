@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* "gold" is the brand red; the name predates the rebrand and is used everywhere. */
-  --color-gold: #C81E2C;
-  --color-gold-light: #E4525F;
-  --color-cream: #F6F1E7;
-  --color-ink: #141414;
+  /* Taken from the O Frank logo and flyer. */
+  --color-brand: #1473E6;
+  --color-brand-dark: #0B3B8F;
+  --color-brand-light: #5AAEFF;
+  --color-tint: #EAF3FF;
+  --color-ink: #0F1B33;
 
-  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
@@ -15,21 +16,20 @@ body {
   color: var(--color-ink);
 }
 
-/* Condensed heavy cut of Archivo for headlines. */
+/* Heavy, tightly spaced cut used for headlines. */
 @utility display-type {
-  font-stretch: 68%;
   font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: -0.01em;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-brand);
   outline-offset: 2px;
 }
 
 ::selection {
-  background: var(--color-gold);
+  background: var(--color-brand);
   color: #ffffff;
 }
 

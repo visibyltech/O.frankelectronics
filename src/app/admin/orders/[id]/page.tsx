@@ -93,7 +93,7 @@ export default function AdminOrderDetailPage() {
     <div>
       <Link
         href="/admin/orders"
-        className="flex w-fit items-center gap-2 text-sm text-ink/60 hover:text-gold"
+        className="flex w-fit items-center gap-2 text-sm text-ink/60 hover:text-brand"
       >
         <ArrowLeft className="h-4 w-4" /> Back to Orders
       </Link>
@@ -101,12 +101,12 @@ export default function AdminOrderDetailPage() {
       <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
-            <h2 className="display-type text-3xl">Order FX-{order.id}</h2>
+            <h2 className="display-type text-2xl">Order OF-{order.id}</h2>
             <span
               className={`rounded-full px-2 py-1 text-xs ${
                 order.status === "completed"
                   ? "bg-green-500/10 text-green-600"
-                  : "bg-gold/10 text-gold"
+                  : "bg-brand/10 text-brand"
               }`}
             >
               {order.status === "completed" ? "Completed" : "Pending"}
@@ -122,7 +122,7 @@ export default function AdminOrderDetailPage() {
           className={`flex items-center gap-2 px-4 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50 ${
             order.status === "completed"
               ? "bg-ink/10 text-ink hover:bg-ink/15"
-              : "bg-gold text-white hover:bg-ink"
+              : "bg-brand text-white hover:bg-ink"
           }`}
         >
           <CheckCircle2 className="h-4 w-4" />
@@ -131,7 +131,7 @@ export default function AdminOrderDetailPage() {
       </div>
 
       <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <div className="bg-cream p-6">
+        <div className="bg-tint p-6">
           <h3 className="text-base font-semibold text-ink">
             Customer
           </h3>
@@ -163,7 +163,7 @@ export default function AdminOrderDetailPage() {
           </div>
         </div>
 
-        <div className="bg-cream p-6">
+        <div className="bg-tint p-6">
           <h3 className="text-base font-semibold text-ink">Payment</h3>
           <div className="mt-3 space-y-2 text-sm">
             <div className="flex justify-between">
@@ -180,7 +180,7 @@ export default function AdminOrderDetailPage() {
             </div>
             <div className="flex justify-between border-t border-ink/10 pt-2">
               <span className="font-semibold text-ink/70">Total</span>
-              <span className="font-semibold text-gold">₦{order.total.toLocaleString()}</span>
+              <span className="font-semibold text-brand">₦{order.total.toLocaleString()}</span>
             </div>
             {order.payment_method === "installments" && (
               <>
@@ -202,7 +202,7 @@ export default function AdminOrderDetailPage() {
         </div>
       </div>
 
-      <div className="mt-4 bg-cream p-6">
+      <div className="mt-4 bg-tint p-6">
         <h3 className="text-base font-semibold text-ink">Items</h3>
         <div className="mt-3 space-y-3">
           {items.map((item) => (
@@ -217,7 +217,7 @@ export default function AdminOrderDetailPage() {
       </div>
 
       {order.has_receipt && (
-        <div className="mt-4 bg-cream p-6">
+        <div className="mt-4 bg-tint p-6">
           <h3 className="text-base font-semibold text-ink">
             Payment Receipt
           </h3>
@@ -229,7 +229,7 @@ export default function AdminOrderDetailPage() {
             <img
               src={`/api/admin/orders/${order.id}/receipt`}
               alt="Payment receipt"
-              className="max-h-[600px] w-full object-contain bg-cream"
+              className="max-h-[600px] w-full object-contain bg-tint"
             />
           </div>
         </div>

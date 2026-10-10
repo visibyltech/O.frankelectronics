@@ -49,7 +49,6 @@ const ReviewStep = ({
   const installmentInterest = breakdown.interest;
   const installmentTotalPayable = breakdown.totalPayable;
   const installmentDeposit = breakdown.deposit;
-  const installmentRemaining = breakdown.remaining;
   const installmentWeeklyPayment = breakdown.weeklyPayment;
 
   const handleReceiptChange = async (file: File | null) => {
@@ -119,7 +118,7 @@ const ReviewStep = ({
       return;
     }
 
-    const reference = `FX-${Date.now()}`;
+    const reference = `OF-${Date.now()}`;
     const [firstName, ...rest] = delivery.fullName.trim().split(" ");
     const lastName = rest.join(" ") || firstName;
     const origin = window.location.origin;
@@ -192,7 +191,7 @@ const ReviewStep = ({
 
   return (
     <div className="flex-1">
-      <h2 className="display-type text-3xl">Review and pay</h2>
+      <h2 className="display-type text-2xl">Review and pay</h2>
 
       {paymentMethod === "bank-transfer" && (
         <div className="mt-6 border-t border-ink/15 pt-6">
@@ -203,7 +202,7 @@ const ReviewStep = ({
             account below. Your order will not ship until we receive payment.
           </p>
 
-          <div className="mt-4 space-y-2 bg-cream p-4 text-sm">
+          <div className="mt-4 space-y-2 bg-tint p-4 text-sm">
             <div className="flex justify-between">
               <span className="text-ink/60">Account name</span>
               <span className="font-semibold">{BANK_ACCOUNTS[0].accountName}</span>
@@ -219,7 +218,7 @@ const ReviewStep = ({
           <p className="mt-4 block text-sm font-medium text-ink/80">
             Upload your payment receipt *
           </p>
-          <label className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-2 border border-dashed border-ink/20 py-8 text-sm text-ink/50 transition hover:border-gold hover:text-gold">
+          <label className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-2 border border-dashed border-ink/20 py-8 text-sm text-ink/50 transition hover:border-brand hover:text-brand">
             <UploadCloud className="h-5 w-5" />
             {receiptFile?.name ?? "Choose a screenshot or photo of the receipt"}
             <input
@@ -244,7 +243,7 @@ const ReviewStep = ({
           <select id="select-duration"
             value={installmentWeeks}
             onChange={(e) => setInstallmentWeeks(Number(e.target.value))}
-            className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm focus:border-gold focus:outline-none"
+            className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm focus:border-brand focus:outline-none"
           >
             {INSTALLMENT_PLANS.map((plan) => (
               <option key={plan.weeks} value={plan.weeks} className="bg-white">
@@ -253,7 +252,7 @@ const ReviewStep = ({
             ))}
           </select>
 
-          <div className="mt-4 space-y-2 bg-cream p-4 text-sm">
+          <div className="mt-4 space-y-2 bg-tint p-4 text-sm">
             <div className="flex justify-between">
               <span className="text-ink/50">Subtotal (inc. Delivery)</span>
               <span className="font-semibold">₦{total.toLocaleString()}</span>
@@ -264,7 +263,7 @@ const ReviewStep = ({
             </div>
             <div className="flex justify-between border-t border-ink/10 pt-2">
               <span className="font-semibold text-ink/70">Total Payable</span>
-              <span className="font-semibold text-gold">
+              <span className="font-semibold text-brand">
                 ₦{installmentTotalPayable.toLocaleString()}
               </span>
             </div>
@@ -293,7 +292,7 @@ const ReviewStep = ({
             to the account below.
           </p>
 
-          <div className="mt-3 space-y-2 bg-cream p-4 text-sm">
+          <div className="mt-3 space-y-2 bg-tint p-4 text-sm">
             <div className="flex justify-between">
               <span className="text-ink/60">Account name</span>
               <span className="font-semibold">{BANK_ACCOUNTS[0].accountName}</span>
@@ -306,7 +305,7 @@ const ReviewStep = ({
             ))}
           </div>
 
-          <label className="mt-3 flex cursor-pointer flex-col items-center justify-center gap-2 border border-dashed border-ink/20 py-8 text-sm text-ink/50 transition hover:border-gold hover:text-gold">
+          <label className="mt-3 flex cursor-pointer flex-col items-center justify-center gap-2 border border-dashed border-ink/20 py-8 text-sm text-ink/50 transition hover:border-brand hover:text-brand">
             <UploadCloud className="h-5 w-5" />
             {receiptFile?.name ?? "Choose a screenshot or photo of the receipt"}
             <input
@@ -328,7 +327,7 @@ const ReviewStep = ({
             payment plan there to complete your purchase.
           </p>
           {klumpStatus === "verifying" && (
-            <p className="mt-3 flex items-center gap-2 text-gold">
+            <p className="mt-3 flex items-center gap-2 text-brand">
               <Loader2 className="h-4 w-4 animate-spin" /> Verifying your payment...
             </p>
           )}
@@ -356,7 +355,7 @@ const ReviewStep = ({
             type="checkbox"
             checked={acceptedTerms}
             onChange={(e) => setAcceptedTerms(e.target.checked)}
-            className="mt-0.5 accent-gold"
+            className="mt-0.5 accent-brand"
           />
           I accept the <span className="font-semibold text-ink">Terms & Conditions</span>{" "}
           including the No-Return & No-Refund policy.
@@ -366,7 +365,7 @@ const ReviewStep = ({
             type="checkbox"
             checked={acceptedPrivacy}
             onChange={(e) => setAcceptedPrivacy(e.target.checked)}
-            className="mt-0.5 accent-gold"
+            className="mt-0.5 accent-brand"
           />
           I accept the <span className="font-semibold text-ink">Privacy Policy</span> and consent
           to data processing under Nigerian NDPR.
@@ -383,7 +382,7 @@ const ReviewStep = ({
         <button
           onClick={handlePlaceOrder}
           disabled={!canPlaceOrder || submitting || klumpStatus === "verifying"}
-          className="flex flex-1 items-center justify-center gap-2 bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-40"
+          className="flex flex-1 items-center justify-center gap-2 bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-40"
         >
           {submitting ? "Placing order…" : `Place order: ₦${orderTotal.toLocaleString()}`}
         </button>

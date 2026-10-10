@@ -35,14 +35,14 @@ export default function AdminOrdersPage() {
 
   return (
     <div>
-      <h2 className="display-type text-3xl">Orders ({orders.length})</h2>
+      <h2 className="display-type text-2xl">Orders ({orders.length})</h2>
 
       {loading ? (
         <p className="mt-8 text-sm text-ink/50">Loading…</p>
       ) : orders.length === 0 ? (
         <p className="mt-8 text-sm text-ink/50">No orders yet.</p>
       ) : (
-        <div className="mt-6 overflow-x-auto bg-cream">
+        <div className="mt-6 overflow-x-auto bg-tint">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-ink/10 text-xs font-medium text-ink/60">
@@ -58,7 +58,7 @@ export default function AdminOrdersPage() {
             <tbody>
               {orders.map((order) => (
                 <tr key={order.id} className="border-b border-ink/5 last:border-0">
-                  <td className="px-4 py-3 font-medium">FX-{order.id}</td>
+                  <td className="px-4 py-3 font-medium">OF-{order.id}</td>
                   <td className="px-4 py-3">
                     <p className="text-ink">{order.full_name}</p>
                     <p className="text-xs text-ink/50">{order.email}</p>
@@ -66,13 +66,13 @@ export default function AdminOrdersPage() {
                   <td className="px-4 py-3 text-ink/60">
                     {PAYMENT_LABELS[order.payment_method]}
                   </td>
-                  <td className="px-4 py-3 text-gold">₦{order.total.toLocaleString()}</td>
+                  <td className="px-4 py-3 text-brand">₦{order.total.toLocaleString()}</td>
                   <td className="px-4 py-3">
                     <span
                       className={`rounded-full px-2 py-1 text-xs ${
                         order.status === "completed"
                           ? "bg-green-500/10 text-green-600"
-                          : "bg-gold/10 text-gold"
+                          : "bg-brand/10 text-brand"
                       }`}
                     >
                       {order.status === "completed" ? "Completed" : "Pending"}
@@ -84,7 +84,7 @@ export default function AdminOrdersPage() {
                   <td className="px-4 py-3">
                     <Link
                       href={`/admin/orders/${order.id}`}
-                      className="flex items-center justify-end text-ink/60 hover:text-gold"
+                      className="flex items-center justify-end text-ink/60 hover:text-brand"
                     >
                       <Eye className="h-4 w-4" />
                     </Link>

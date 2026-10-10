@@ -60,7 +60,7 @@ export default function EditProductPage() {
 
   return (
     <div>
-      <h2 className="display-type text-3xl">Edit Product</h2>
+      <h2 className="display-type text-2xl">Edit Product</h2>
       <div className="mt-6">
         <ProductForm initialValues={initialValues} submitLabel="Save Changes" onSubmit={handleSubmit} />
       </div>

@@ -109,7 +109,7 @@ export default function AdminCategoriesPage() {
     const draft = drafts[category.id] ?? category;
     return (
       <div
-        className={`flex flex-wrap items-center gap-3 bg-cream p-4 ${indent ? "ml-8" : ""}`}
+        className={`flex flex-wrap items-center gap-3 bg-tint p-4 ${indent ? "ml-8" : ""}`}
       >
         <div className="relative h-12 w-12 shrink-0 overflow-hidden bg-ink/10">
           <ProductImage src={draft.image} alt={draft.name} fill className="object-cover" />
@@ -117,25 +117,25 @@ export default function AdminCategoriesPage() {
         <input
           value={draft.name}
           onChange={(e) => updateDraft(category.id, "name", e.target.value)}
-          className="min-w-40 flex-1 border border-ink/20 bg-white px-3 py-2 text-sm focus:border-gold focus:outline-none"
+          className="min-w-40 flex-1 border border-ink/20 bg-white px-3 py-2 text-sm focus:border-brand focus:outline-none"
         />
         <input
           value={draft.slug}
           onChange={(e) => updateDraft(category.id, "slug", e.target.value)}
-          className="min-w-32 flex-1 border border-ink/20 bg-white px-3 py-2 text-sm text-ink/60 focus:border-gold focus:outline-none"
+          className="min-w-32 flex-1 border border-ink/20 bg-white px-3 py-2 text-sm text-ink/60 focus:border-brand focus:outline-none"
         />
         <input
           value={draft.image ?? ""}
           onChange={(e) => updateDraft(category.id, "image", e.target.value)}
           placeholder="Image URL"
-          className="min-w-40 flex-1 border border-ink/20 bg-white px-3 py-2 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+          className="min-w-40 flex-1 border border-ink/20 bg-white px-3 py-2 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
         />
         <select
           value={draft.parent_id ?? ""}
           onChange={(e) =>
             updateDraft(category.id, "parent_id", e.target.value ? Number(e.target.value) : null)
           }
-          className="border border-ink/20 bg-white px-3 py-2 text-sm focus:border-gold focus:outline-none"
+          className="border border-ink/20 bg-white px-3 py-2 text-sm focus:border-brand focus:outline-none"
         >
           <option value="">Top-level</option>
           {parentOptions
@@ -149,7 +149,7 @@ export default function AdminCategoriesPage() {
         <button
           onClick={() => handleSave(category.id)}
           disabled={savingId === category.id}
-          className="bg-gold px-4 py-2 text-xs font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
+          className="bg-brand px-4 py-2 text-xs font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
         >
           {savingId === category.id ? "Saving…" : "Save"}
         </button>
@@ -162,11 +162,11 @@ export default function AdminCategoriesPage() {
 
   return (
     <div>
-      <h2 className="display-type text-3xl">Categories ({categories.length})</h2>
+      <h2 className="display-type text-2xl">Categories ({categories.length})</h2>
       <p className="mt-1 text-sm text-ink/50">
-        Categories can be nested one level deep. Fidex currently uses four top-level categories
-        (Clothing, Accessories, Grooming and Essentials), and you can add subcategories under any
-        of them.
+        Categories can be nested one level deep. The store starts with six departments (Televisions,
+        Laptops & Computers, Mobile Phones & Accessories, Home Appliances, Kitchen Appliances and
+        Gadgets & More), and you can add subcategories under any of them.
       </p>
 
       {error && (
@@ -175,7 +175,7 @@ export default function AdminCategoriesPage() {
 
       <form
         onSubmit={handleCreate}
-        className="mt-6 flex flex-wrap items-end gap-3 bg-cream p-4"
+        className="mt-6 flex flex-wrap items-end gap-3 bg-tint p-4"
       >
         <div>
           <label htmlFor="name" className="text-sm font-medium text-ink/80">Name</label>
@@ -183,7 +183,7 @@ export default function AdminCategoriesPage() {
             required
             value={newCategory.name}
             onChange={(e) => setNewCategory((v) => ({ ...v, name: e.target.value }))}
-            className="mt-2 border border-ink/20 bg-white px-3 py-2 text-sm focus:border-gold focus:outline-none"
+            className="mt-2 border border-ink/20 bg-white px-3 py-2 text-sm focus:border-brand focus:outline-none"
           />
         </div>
         <div>
@@ -192,7 +192,7 @@ export default function AdminCategoriesPage() {
             value={newCategory.slug}
             onChange={(e) => setNewCategory((v) => ({ ...v, slug: e.target.value }))}
             placeholder="auto from name"
-            className="mt-2 border border-ink/20 bg-white px-3 py-2 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+            className="mt-2 border border-ink/20 bg-white px-3 py-2 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
           />
         </div>
         <div>
@@ -201,7 +201,7 @@ export default function AdminCategoriesPage() {
             value={newCategory.image}
             onChange={(e) => setNewCategory((v) => ({ ...v, image: e.target.value }))}
             placeholder="https://images.example.com/category.jpg"
-            className="mt-2 border border-ink/20 bg-white px-3 py-2 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+            className="mt-2 border border-ink/20 bg-white px-3 py-2 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
           />
         </div>
         <div>
@@ -209,7 +209,7 @@ export default function AdminCategoriesPage() {
           <select id="parent-category"
             value={newCategory.parentId}
             onChange={(e) => setNewCategory((v) => ({ ...v, parentId: e.target.value }))}
-            className="mt-2 border border-ink/20 bg-white px-3 py-2 text-sm focus:border-gold focus:outline-none"
+            className="mt-2 border border-ink/20 bg-white px-3 py-2 text-sm focus:border-brand focus:outline-none"
           >
             <option value="">None (top-level)</option>
             {parentOptions.map((p) => (
@@ -221,7 +221,7 @@ export default function AdminCategoriesPage() {
         </div>
         <button
           type="submit"
-          className="bg-gold px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
+          className="bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
         >
           + Add Category
         </button>

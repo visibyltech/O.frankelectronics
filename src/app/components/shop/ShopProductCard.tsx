@@ -76,7 +76,7 @@ const ShopProductCard = ({
   const nameLink = (
     <Link
       href={`/product/${product.id}`}
-      className="transition group-hover:text-gold after:absolute after:inset-0 after:content-['']"
+      className="transition group-hover:text-brand after:absolute after:inset-0 after:content-['']"
     >
       {product.name}
     </Link>
@@ -87,9 +87,9 @@ const ShopProductCard = ({
       onClick={() => toggleWishlist(item)}
       aria-label={wishlisted ? `Remove ${product.name} from wishlist` : `Save ${product.name} to wishlist`}
       aria-pressed={wishlisted}
-      className="relative z-10 flex h-9 w-9 items-center justify-center bg-white text-ink transition hover:text-gold"
+      className="relative z-10 flex h-9 w-9 items-center justify-center bg-white text-ink transition hover:text-brand"
     >
-      <Heart className={`h-4 w-4 ${wishlisted ? "fill-gold text-gold" : ""}`} />
+      <Heart className={`h-4 w-4 ${wishlisted ? "fill-brand text-brand" : ""}`} />
     </button>
   );
 
@@ -98,7 +98,7 @@ const ShopProductCard = ({
       onClick={handleAddToCart}
       aria-label={`Add ${product.name} to cart`}
       className={`relative z-10 flex h-10 w-10 items-center justify-center text-white transition ${
-        added ? "bg-gold" : "bg-ink hover:bg-gold"
+        added ? "bg-brand" : "bg-ink hover:bg-brand"
       }`}
     >
       {added ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
@@ -107,7 +107,7 @@ const ShopProductCard = ({
 
   const saleBadge =
     discount > 0 ? (
-      <span className="pointer-events-none absolute top-2 left-2 z-10 bg-gold px-2 py-1 text-xs font-semibold text-white">
+      <span className="pointer-events-none absolute top-2 left-2 z-10 bg-brand px-2 py-1 text-xs font-semibold text-white">
         -{discount}%
       </span>
     ) : null;
@@ -124,7 +124,7 @@ const ShopProductCard = ({
   if (layout === "list") {
     return (
       <article className="group relative flex items-center gap-4 border-b border-ink/10 pb-4">
-        <div className="relative h-28 w-24 shrink-0 overflow-hidden bg-cream">
+        <div className="relative h-28 w-24 shrink-0 overflow-hidden bg-tint">
           {saleBadge}
           {image("96px")}
         </div>
@@ -148,7 +148,7 @@ const ShopProductCard = ({
 
   return (
     <article className="group relative">
-      <div className="relative aspect-4/5 overflow-hidden bg-cream">
+      <div className="relative aspect-4/5 overflow-hidden bg-tint">
         {saleBadge}
         <div className="absolute top-2 right-2 z-10">{wishlistButton}</div>
         {image("(min-width: 1024px) 25vw, 50vw")}

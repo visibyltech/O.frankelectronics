@@ -31,7 +31,7 @@ const PaymentMethodStep = ({ selected, onSelect, onBack, onContinue }: PaymentMe
   return (
     <div className="flex-1">
       <fieldset>
-        <legend className="display-type text-3xl">How would you like to pay?</legend>
+        <legend className="display-type text-2xl">How would you like to pay?</legend>
 
         <div className="mt-6 border-t border-ink/10">
           {methods.map((method) => {
@@ -41,7 +41,7 @@ const PaymentMethodStep = ({ selected, onSelect, onBack, onContinue }: PaymentMe
               <label
                 key={method.id}
                 className={`flex cursor-pointer items-start gap-4 border-b border-ink/10 px-2 py-5 transition ${
-                  isSelected ? "bg-cream" : "hover:bg-cream/50"
+                  isSelected ? "bg-tint" : "hover:bg-tint/50"
                 }`}
               >
                 <input
@@ -49,7 +49,7 @@ const PaymentMethodStep = ({ selected, onSelect, onBack, onContinue }: PaymentMe
                   name="payment-method"
                   checked={isSelected}
                   onChange={() => onSelect(method.id)}
-                  className="mt-1 accent-gold"
+                  className="mt-1 accent-brand"
                 />
                 <span>
                   <span className="block text-base font-semibold">{method.title}</span>
@@ -70,7 +70,7 @@ const PaymentMethodStep = ({ selected, onSelect, onBack, onContinue }: PaymentMe
         </button>
         <button
           onClick={onContinue}
-          className="flex flex-1 items-center justify-center gap-2 bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
+          className="flex flex-1 items-center justify-center gap-2 bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
         >
           Review order <ArrowRight className="h-4 w-4" />
         </button>

@@ -9,7 +9,7 @@ const OrderSummary = () => {
   const total = subtotal + (items.length > 0 ? DELIVERY_FEE : 0);
 
   return (
-    <div className="h-fit w-full bg-cream p-6">
+    <div className="h-fit w-full bg-tint p-6">
       <h2 className="text-lg font-semibold">Order summary</h2>
 
       <div className="mt-4 flex flex-col gap-4 border-b border-ink/10 pb-4">
@@ -22,7 +22,7 @@ const OrderSummary = () => {
               <p className="text-sm font-medium">{item.name}</p>
               <p className="text-xs text-ink/50">Qty: {item.qty}</p>
             </div>
-            <p className="text-sm font-semibold text-gold">
+            <p className="text-sm font-semibold text-brand">
               ₦{(item.price * item.qty).toLocaleString()}
             </p>
           </div>
@@ -42,7 +42,7 @@ const OrderSummary = () => {
 
       <div className="mt-4 flex justify-between border-t border-ink/10 pt-4 text-base font-semibold">
         <span>Total</span>
-        <span className="text-gold">₦{total.toLocaleString()}</span>
+        <span className="text-brand">₦{total.toLocaleString()}</span>
       </div>
     </div>
   );

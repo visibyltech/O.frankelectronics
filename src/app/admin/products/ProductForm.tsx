@@ -136,7 +136,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl bg-cream p-6">
+    <form onSubmit={handleSubmit} className="max-w-xl bg-tint p-6">
       {error && (
         <p className="mb-4 bg-red-500/10 px-4 py-2 text-sm text-red-600">{error}</p>
       )}
@@ -148,7 +148,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
             required
             value={values.name}
             onChange={(e) => set("name", e.target.value)}
-            className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+            className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
           />
         </div>
 
@@ -158,7 +158,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
             required
             value={values.categoryId}
             onChange={(e) => set("categoryId", e.target.value)}
-            className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm focus:border-gold focus:outline-none"
+            className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm focus:border-brand focus:outline-none"
           >
             <option value="" disabled className="bg-white">
               Select a category
@@ -190,7 +190,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
               min={0}
               value={values.price}
               onChange={(e) => set("price", e.target.value)}
-              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm focus:border-gold focus:outline-none"
+              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm focus:border-brand focus:outline-none"
             />
           </div>
           <div>
@@ -201,7 +201,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
               value={values.oldPrice}
               onChange={(e) => set("oldPrice", e.target.value)}
               placeholder="Optional"
-              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
           </div>
         </div>
@@ -220,13 +220,13 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
                 <div
                   key={item.key}
                   className={`relative aspect-square overflow-hidden bg-ink/10 ${
-                    i === 0 ? "ring-2 ring-gold" : ""
+                    i === 0 ? "ring-2 ring-brand" : ""
                   }`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={item.preview} alt={`Image ${i + 1}`} className="h-full w-full object-cover" />
                   {i === 0 ? (
-                    <span className="absolute bottom-1 left-1 bg-gold px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                    <span className="absolute bottom-1 left-1 bg-brand px-1.5 py-0.5 text-[10px] font-semibold text-white">
                       Cover
                     </span>
                   ) : (
@@ -235,7 +235,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
                       onClick={() => makeCover(item.key)}
                       aria-label="Make cover image"
                       title="Make cover image"
-                      className="absolute bottom-1 left-1 flex h-6 w-6 items-center justify-center rounded-full bg-ink/60 text-white transition hover:bg-gold hover:text-ink"
+                      className="absolute bottom-1 left-1 flex h-6 w-6 items-center justify-center rounded-full bg-ink/60 text-white transition hover:bg-brand hover:text-ink"
                     >
                       <Star className="h-3 w-3" />
                     </button>
@@ -255,7 +255,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
 
           {roomLeft > 0 && (
             <>
-              <label className="mt-3 flex cursor-pointer flex-col items-center justify-center gap-2 border border-dashed border-ink/20 py-6 text-sm text-ink/50 transition hover:border-gold hover:text-gold">
+              <label className="mt-3 flex cursor-pointer flex-col items-center justify-center gap-2 border border-dashed border-ink/20 py-6 text-sm text-ink/50 transition hover:border-brand hover:text-brand">
                 <UploadCloud className="h-5 w-5" />
                 {processing ? "Preparing images…" : "Click to upload images (you can select several)"}
                 <input
@@ -286,12 +286,12 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
                     }
                   }}
                   placeholder="https://images.example.com/product.jpg"
-                  className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+                  className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
                 />
                 <button
                   type="button"
                   onClick={handleAddUrl}
-                  className="shrink-0 border border-ink/10 px-4 text-sm font-semibold transition hover:border-gold hover:text-gold"
+                  className="shrink-0 border border-ink/10 px-4 text-sm font-semibold transition hover:border-brand hover:text-brand"
                 >
                   Add
                 </button>
@@ -306,7 +306,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
             rows={3}
             value={values.description}
             onChange={(e) => set("description", e.target.value)}
-            className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+            className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
           />
         </div>
 
@@ -319,7 +319,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
               min={0}
               value={values.stock}
               onChange={(e) => set("stock", e.target.value)}
-              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm focus:border-gold focus:outline-none"
+              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm focus:border-brand focus:outline-none"
             />
           </div>
           <div className="flex items-end pb-3">
@@ -328,7 +328,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
                 type="checkbox"
                 checked={values.isActive}
                 onChange={(e) => set("isActive", e.target.checked)}
-                className="accent-gold"
+                className="accent-brand"
               />
               Active (visible in shop)
             </label>
@@ -339,7 +339,7 @@ const ProductForm = ({ initialValues, submitLabel, onSubmit }: ProductFormProps)
       <button
         type="submit"
         disabled={submitting || processing}
-        className="mt-6 w-full bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
+        className="mt-6 w-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
       >
         {submitting ? "Saving…" : submitLabel}
       </button>

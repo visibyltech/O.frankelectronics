@@ -50,11 +50,11 @@ function LoginForm() {
   return (
     <div className="flex justify-center px-4 py-12 md:py-20">
       <div className="w-full max-w-sm">
-        <h1 className="display-type text-4xl text-ink">Sign in</h1>
-        <p className="mt-2 text-sm text-ink/60">Welcome back to Fidex.</p>
+        <h1 className="display-type text-3xl text-ink">Sign in</h1>
+        <p className="mt-2 text-sm text-ink/60">Welcome back to O Frank Electronics.</p>
 
         {next.startsWith("/checkout") && (
-          <p className="mt-4 bg-gold/10 px-4 py-2 text-sm text-ink/70">
+          <p className="mt-4 bg-brand/10 px-4 py-2 text-sm text-ink/70">
             Please sign in or create an account to continue to checkout.
           </p>
         )}
@@ -74,7 +74,7 @@ function LoginForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
           </div>
           <div>
@@ -86,14 +86,14 @@ function LoginForm() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
           >
             {submitting ? "Signing in…" : "Sign in"}
           </button>
@@ -103,7 +103,7 @@ function LoginForm() {
           Don&apos;t have an account?{" "}
           <Link
             href={next === "/" ? "/signup" : `/signup?next=${encodeURIComponent(next)}`}
-            className="font-medium text-ink underline underline-offset-4 hover:text-gold">
+            className="font-medium text-ink underline underline-offset-4 hover:text-brand">
             Create one
           </Link>
         </p>

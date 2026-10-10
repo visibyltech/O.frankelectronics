@@ -1,4 +1,4 @@
-# Fidex — Firestore data model
+# O Frank Electronics: Firestore data model
 
 Firestore is schemaless (no migration step — collections and fields are
 created implicitly on first write). This documents the shape every route in
@@ -23,7 +23,7 @@ Every account is created with role `"user"`; role is only ever changed to
 `{ id, name, slug, image, parent_id: number | null, created_at }`
 `parent_id` is `null` for a top-level category and set for a leaf category
 nested under one. Only two levels are supported; products always belong to
-a leaf category when a hierarchy is in use (Fidex's own catalog is flat —
+a leaf category when a hierarchy is in use (this store's catalog starts flat:
 every category is top-level with no children).
 
 ### `products/{id}`

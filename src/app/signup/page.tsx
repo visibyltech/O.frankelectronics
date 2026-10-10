@@ -51,7 +51,7 @@ function SignupForm() {
   return (
     <div className="flex justify-center px-4 py-12 md:py-20">
       <div className="w-full max-w-sm">
-        <h1 className="display-type text-4xl text-ink">Create an account</h1>
+        <h1 className="display-type text-3xl text-ink">Create an account</h1>
         <p className="mt-2 text-sm text-ink/60">It takes a minute, and your orders are saved to it.</p>
 
         {error && (
@@ -69,7 +69,7 @@ function SignupForm() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
           </div>
           <div>
@@ -82,7 +82,7 @@ function SignupForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
           </div>
           <div>
@@ -95,7 +95,7 @@ function SignupForm() {
               minLength={8}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
             <p className="mt-1 text-xs text-ink/40">At least 8 characters.</p>
           </div>
@@ -103,7 +103,7 @@ function SignupForm() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
           >
             {submitting ? "Creating account…" : "Create account"}
           </button>
@@ -113,7 +113,7 @@ function SignupForm() {
           Already have an account?{" "}
           <Link
             href={next === "/" ? "/login" : `/login?next=${encodeURIComponent(next)}`}
-            className="font-medium text-ink underline underline-offset-4 hover:text-gold">
+            className="font-medium text-ink underline underline-offset-4 hover:text-brand">
             Sign in
           </Link>
         </p>

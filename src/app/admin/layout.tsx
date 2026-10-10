@@ -22,14 +22,14 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
 
   if (!user) {
     return (
-      <div className="mx-4 md:mx-10 mt-16 mb-16 bg-cream py-16 text-center">
-        <h1 className="display-type text-4xl">Sign in required</h1>
+      <div className="mx-4 md:mx-10 mt-16 mb-16 bg-tint py-16 text-center">
+        <h1 className="display-type text-3xl">Sign in required</h1>
         <p className="mt-2 text-sm text-ink/60">
           You need to sign in with an admin account to access this page.
         </p>
         <Link
           href="/login?next=/admin"
-          className="mt-6 inline-block bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
+          className="mt-6 inline-block bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
         >
           Sign in
         </Link>
@@ -39,8 +39,8 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
 
   if (user.role !== "admin") {
     return (
-      <div className="mx-4 md:mx-10 mt-16 mb-16 bg-cream py-16 text-center">
-        <h1 className="display-type text-4xl">Access denied</h1>
+      <div className="mx-4 md:mx-10 mt-16 mb-16 bg-tint py-16 text-center">
+        <h1 className="display-type text-3xl">Access denied</h1>
         <p className="mt-2 text-sm text-ink/60">This area is for administrators only.</p>
       </div>
     );
@@ -48,7 +48,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
 
   return (
     <div className="px-4 pt-10 md:px-10">
-      <h1 className="display-type text-5xl md:text-6xl">Admin</h1>
+      <h1 className="display-type text-4xl md:text-4xl">Admin</h1>
 
       <nav className="mt-6 flex flex-wrap gap-2 border-b border-ink/10 pb-4">
         {links.map((link) => (
@@ -56,7 +56,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
             key={link.href}
             href={link.href}
             className={`px-4 py-2 text-sm font-medium transition ${
-              pathname === link.href ? "bg-ink text-white" : "text-ink/60 hover:text-gold"
+              pathname === link.href ? "bg-ink text-white" : "text-ink/60 hover:text-brand"
             }`}
           >
             {link.label}

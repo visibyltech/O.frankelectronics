@@ -38,12 +38,12 @@ const ShopSidebar = ({
         key={slug ?? "all"}
         onClick={() => onSelectCategory(slug)}
         aria-pressed={active}
-        className={`flex w-full items-center justify-between py-1.5 text-left text-sm transition hover:text-gold ${
+        className={`flex w-full items-center justify-between py-1.5 text-left text-sm transition hover:text-brand ${
           nested ? "pl-4" : ""
         } ${active ? "font-semibold text-ink" : "text-ink/60"}`}
       >
         {label}
-        {active && <span className="h-1.5 w-1.5 bg-gold" aria-hidden />}
+        {active && <span className="h-1.5 w-1.5 bg-brand" aria-hidden />}
       </button>
     );
   };
@@ -97,7 +97,7 @@ const ShopSidebar = ({
                 type="checkbox"
                 checked={minRating === rating}
                 onChange={() => onMinRatingChange(minRating === rating ? null : rating)}
-                className="accent-gold"
+                className="accent-brand"
               />
               <Star className="h-3.5 w-3.5 fill-ink text-ink" />
               {rating} and up

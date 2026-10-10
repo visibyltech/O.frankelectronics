@@ -10,7 +10,7 @@ const CheckoutStepper = ({ currentStep }: { currentStep: number }) => {
 
         return (
           <li key={step} aria-current={isActive ? "step" : undefined}>
-            <div className={`h-1 ${reached ? "bg-gold" : "bg-ink/10"}`} />
+            <div className={`h-1 ${reached ? "bg-brand" : "bg-ink/10"}`} />
             <p className={`mt-2 text-sm ${isActive ? "font-semibold text-ink" : reached ? "text-ink/70" : "text-ink/40"}`}>
               {step}
             </p>

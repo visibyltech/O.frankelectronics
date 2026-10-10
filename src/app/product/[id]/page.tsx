@@ -77,11 +77,11 @@ export default function ProductDetailPage() {
   if (status === "not-found" || !product) {
     return (
       <div className="px-4 py-24 text-center md:px-10">
-        <h1 className="display-type text-5xl text-ink">Product not found</h1>
+        <h1 className="display-type text-4xl text-ink">Product not found</h1>
         <p className="mt-3 text-sm text-ink/60">It may have sold out or been taken down.</p>
         <Link
           href="/shop"
-          className="mt-8 inline-flex items-center gap-2 bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-gold"
+          className="mt-8 inline-flex items-center gap-2 bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand"
         >
           <ArrowLeft className="h-4 w-4" /> Back to the shop
         </Link>
@@ -110,13 +110,13 @@ export default function ProductDetailPage() {
   return (
     <div>
       <nav aria-label="Breadcrumb" className="px-4 pt-6 text-xs text-ink/60 md:px-10">
-        <Link href="/" className="hover:text-gold">Home</Link>
+        <Link href="/" className="hover:text-brand">Home</Link>
         <span className="mx-2">/</span>
-        <Link href="/shop" className="hover:text-gold">Shop</Link>
+        <Link href="/shop" className="hover:text-brand">Shop</Link>
         {product.category && (
           <>
             <span className="mx-2">/</span>
-            <Link href={`/shop?category=${product.category}`} className="hover:text-gold">
+            <Link href={`/shop?category=${product.category}`} className="hover:text-brand">
               {product.category_name}
             </Link>
           </>
@@ -127,9 +127,9 @@ export default function ProductDetailPage() {
 
       <div className="mt-6 grid grid-cols-1 gap-10 px-4 md:px-10 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-7">
-          <div className="relative aspect-4/5 overflow-hidden bg-cream">
+          <div className="relative aspect-4/5 overflow-hidden bg-tint">
             {discount > 0 && (
-              <span className="absolute top-3 left-3 z-10 bg-gold px-2.5 py-1 text-sm font-semibold text-white">
+              <span className="absolute top-3 left-3 z-10 bg-brand px-2.5 py-1 text-sm font-semibold text-white">
                 -{discount}%
               </span>
             )}
@@ -151,7 +151,7 @@ export default function ProductDetailPage() {
                   onClick={() => setActiveIndex(i)}
                   aria-label={`Show image ${i + 1} of ${images.length}`}
                   aria-current={i === activeIndex}
-                  className={`relative aspect-square overflow-hidden bg-cream transition ${
+                  className={`relative aspect-square overflow-hidden bg-tint transition ${
                     i === activeIndex ? "ring-2 ring-ink ring-offset-2" : "opacity-70 hover:opacity-100"
                   }`}
                 >
@@ -164,11 +164,11 @@ export default function ProductDetailPage() {
 
         <div className="lg:col-span-5 lg:pt-4">
           {product.category && (
-            <Link href={`/shop?category=${product.category}`} className="text-sm text-ink/60 hover:text-gold">
+            <Link href={`/shop?category=${product.category}`} className="text-sm text-ink/60 hover:text-brand">
               {product.category_name}
             </Link>
           )}
-          <h1 className="display-type mt-2 text-5xl text-ink md:text-6xl">{product.name}</h1>
+          <h1 className="display-type mt-2 text-4xl text-ink md:text-4xl">{product.name}</h1>
 
           {product.reviews_count > 0 && (
             <p className="mt-3 flex items-center gap-1.5 text-sm text-ink/70">
@@ -189,7 +189,7 @@ export default function ProductDetailPage() {
             <p className="mt-6 leading-relaxed whitespace-pre-line text-ink/75">{product.description}</p>
           )}
 
-          <p className={`mt-6 text-sm font-medium ${outOfStock ? "text-gold" : "text-ink/70"}`}>
+          <p className={`mt-6 text-sm font-medium ${outOfStock ? "text-brand" : "text-ink/70"}`}>
             {outOfStock
               ? "Sold out"
               : product.stock != null && product.stock <= 5
@@ -202,7 +202,7 @@ export default function ProductDetailPage() {
               <button
                 onClick={() => setQty((q) => Math.max(1, q - 1))}
                 aria-label="Decrease quantity"
-                className="px-3 py-3 text-ink/70 transition hover:text-gold"
+                className="px-3 py-3 text-ink/70 transition hover:text-brand"
               >
                 <Minus className="h-4 w-4" />
               </button>
@@ -212,7 +212,7 @@ export default function ProductDetailPage() {
               <button
                 onClick={() => setQty((q) => Math.min(maxQty, q + 1))}
                 aria-label="Increase quantity"
-                className="px-3 py-3 text-ink/70 transition hover:text-gold"
+                className="px-3 py-3 text-ink/70 transition hover:text-brand"
               >
                 <Plus className="h-4 w-4" />
               </button>
@@ -222,7 +222,7 @@ export default function ProductDetailPage() {
               onClick={handleAddToCart}
               disabled={outOfStock}
               className={`flex flex-1 items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40 ${
-                added ? "bg-gold" : "bg-ink hover:bg-gold"
+                added ? "bg-brand" : "bg-ink hover:bg-brand"
               }`}
             >
               {added ? (
@@ -240,7 +240,7 @@ export default function ProductDetailPage() {
               aria-pressed={wishlisted}
               className="flex w-12 items-center justify-center border border-ink/20 text-ink transition hover:border-ink"
             >
-              <Heart className={`h-5 w-5 ${wishlisted ? "fill-gold text-gold" : ""}`} />
+              <Heart className={`h-5 w-5 ${wishlisted ? "fill-brand text-brand" : ""}`} />
             </button>
           </div>
 
@@ -256,10 +256,10 @@ export default function ProductDetailPage() {
           </dl>
 
           <a
-            href={whatsappUrl(`Hi Fidex, I have a question about ${product.name}.`)}
+            href={whatsappUrl(`Hi, I have a question about ${product.name}.`)}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-block text-sm font-medium text-ink underline decoration-ink/30 underline-offset-4 transition hover:decoration-gold"
+            className="mt-6 inline-block text-sm font-medium text-ink underline decoration-ink/30 underline-offset-4 transition hover:decoration-brand"
           >
             Ask about this item on WhatsApp
           </a>

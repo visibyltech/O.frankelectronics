@@ -37,10 +37,10 @@ export default function AdminProductsPage() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h2 className="display-type text-3xl">Products ({products.length})</h2>
+        <h2 className="display-type text-2xl">Products ({products.length})</h2>
         <Link
           href="/admin/products/new"
-          className="bg-gold px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
+          className="bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
         >
           + New Product
         </Link>
@@ -49,7 +49,7 @@ export default function AdminProductsPage() {
       {loading ? (
         <p className="mt-8 text-sm text-ink/50">Loading…</p>
       ) : (
-        <div className="mt-6 overflow-x-auto bg-cream">
+        <div className="mt-6 overflow-x-auto bg-tint">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-ink/10 text-xs font-medium text-ink/60">
@@ -66,7 +66,7 @@ export default function AdminProductsPage() {
                 <tr key={product.id} className="border-b border-ink/5 last:border-0">
                   <td className="px-4 py-3 font-medium">{product.name}</td>
                   <td className="px-4 py-3 text-ink/60">{product.category_name}</td>
-                  <td className="px-4 py-3 text-gold">₦{product.price.toLocaleString()}</td>
+                  <td className="px-4 py-3 text-brand">₦{product.price.toLocaleString()}</td>
                   <td className="px-4 py-3 text-ink/60">{product.stock}</td>
                   <td className="px-4 py-3">
                     <span
@@ -83,7 +83,7 @@ export default function AdminProductsPage() {
                     <div className="flex items-center justify-end gap-3">
                       <Link
                         href={`/admin/products/${product.id}/edit`}
-                        className="text-ink/60 hover:text-gold"
+                        className="text-ink/60 hover:text-brand"
                       >
                         <Pencil className="h-4 w-4" />
                       </Link>

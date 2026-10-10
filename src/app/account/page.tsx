@@ -20,12 +20,12 @@ export default function AccountPage() {
 
   if (!user) {
     return (
-      <div className="mx-4 md:mx-10 mt-16 mb-16 bg-cream py-16 text-center">
+      <div className="mx-4 md:mx-10 mt-16 mb-16 bg-tint py-16 text-center">
         <h1 className="text-xl font-semibold">Sign in required</h1>
         <p className="mt-2 text-sm text-ink/60">Sign in to manage your account.</p>
         <Link
           href="/login"
-          className="mt-6 inline-block bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
+          className="mt-6 inline-block bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
         >
           Sign In
         </Link>
@@ -65,7 +65,7 @@ export default function AccountPage() {
 
   return (
     <div className="px-4 pt-10 md:px-10">
-      <h1 className="display-type text-5xl text-ink md:text-6xl">My account</h1>
+      <h1 className="display-type text-4xl text-ink md:text-4xl">My account</h1>
       <p className="mt-2 text-sm text-ink/60">Signed in as {user.email}</p>
 
       <div className="mt-10 w-full max-w-sm border-t border-ink/10 pt-8">
@@ -87,7 +87,7 @@ export default function AccountPage() {
               required
               value={currentPassword}
               onChange={(e) => setCurrentPassword(e.target.value)}
-              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
           </div>
           <div>
@@ -97,7 +97,7 @@ export default function AccountPage() {
               minLength={8}
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
           </div>
           <div>
@@ -107,14 +107,14 @@ export default function AccountPage() {
               minLength={8}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50"
           >
             {submitting ? "Updating…" : "Update password"}
           </button>

@@ -29,23 +29,23 @@ export default function AdminDashboard() {
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-      <Link href="/admin/orders" className="bg-cream p-6 transition hover:bg-ink/10">
+      <Link href="/admin/orders" className="bg-tint p-6 transition hover:bg-ink/10">
         <p className="text-sm font-medium text-ink/60">Orders</p>
-        <p className="mt-2 text-3xl font-semibold text-gold">{counts?.orders ?? "…"}</p>
+        <p className="mt-2 text-3xl font-semibold text-brand">{counts?.orders ?? "…"}</p>
         <p className="mt-4 text-sm text-ink/60">
           {counts ? `${counts.pendingOrders} pending → ` : "Manage orders →"}
         </p>
       </Link>
 
-      <Link href="/admin/products" className="bg-cream p-6 transition hover:bg-ink/10">
+      <Link href="/admin/products" className="bg-tint p-6 transition hover:bg-ink/10">
         <p className="text-sm font-medium text-ink/60">Products</p>
-        <p className="mt-2 text-3xl font-semibold text-gold">{counts?.products ?? "…"}</p>
+        <p className="mt-2 text-3xl font-semibold text-brand">{counts?.products ?? "…"}</p>
         <p className="mt-4 text-sm text-ink/60">Manage products →</p>
       </Link>
 
-      <Link href="/admin/categories" className="bg-cream p-6 transition hover:bg-ink/10">
+      <Link href="/admin/categories" className="bg-tint p-6 transition hover:bg-ink/10">
         <p className="text-sm font-medium text-ink/60">Categories</p>
-        <p className="mt-2 text-3xl font-semibold text-gold">{counts?.categories ?? "…"}</p>
+        <p className="mt-2 text-3xl font-semibold text-brand">{counts?.categories ?? "…"}</p>
         <p className="mt-4 text-sm text-ink/60">Manage categories →</p>
       </Link>
     </div>

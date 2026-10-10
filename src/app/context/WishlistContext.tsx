@@ -20,7 +20,7 @@ type WishlistContextType = {
 
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
 
-const STORAGE_KEY = "fidex-wishlist";
+const STORAGE_KEY = "ofrank-wishlist";
 
 export const WishlistProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<WishlistItem[]>([]);

@@ -103,7 +103,7 @@ const ShopPageClient = () => {
           {search && (
             <button
               onClick={() => setSearch("")}
-              className="mb-4 flex items-center gap-1 text-sm text-ink/60 hover:text-gold"
+              className="mb-4 flex items-center gap-1 text-sm text-ink/60 hover:text-brand"
             >
               <X className="h-3.5 w-3.5" /> Clear search
             </button>

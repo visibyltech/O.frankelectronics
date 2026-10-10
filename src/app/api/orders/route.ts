@@ -187,5 +187,5 @@ export async function POST(request: NextRequest) {
       created_at: new Date().toISOString(),
     });
 
-  return NextResponse.json({ order: { id: orderId, orderNumber: `FX-${orderId}` } }, { status: 201 });
+  return NextResponse.json({ order: { id: orderId, orderNumber: `OF-${orderId}` } }, { status: 201 });
 }

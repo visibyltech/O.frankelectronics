@@ -58,16 +58,16 @@ export default function CheckoutPage() {
 
   if (orderPlaced) {
     return (
-      <div className="mx-4 md:mx-10 mt-8 mb-16 flex flex-col items-center bg-cream py-24 text-center">
-        <CheckCircle2 className="h-16 w-16 text-gold" />
+      <div className="mx-4 md:mx-10 mt-8 mb-16 flex flex-col items-center bg-tint py-24 text-center">
+        <CheckCircle2 className="h-16 w-16 text-brand" />
         <h1 className="mt-6 text-2xl font-semibold">Order Placed Successfully!</h1>
         <p className="mt-2 text-sm text-ink/60">
-          Your order <span className="font-semibold text-gold">{orderNumber}</span> has been
+          Your order <span className="font-semibold text-brand">{orderNumber}</span> has been
           received. We&apos;ll reach out with confirmation shortly.
         </p>
         <Link
           href="/shop"
-          className="mt-8 flex items-center gap-2 bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
+          className="mt-8 flex items-center gap-2 bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
         >
           Continue shopping <ArrowRight className="h-4 w-4" />
         </Link>
@@ -77,12 +77,12 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="mx-4 md:mx-10 mt-8 mb-16 flex flex-col items-center bg-cream py-24 text-center">
-        <h1 className="display-type text-4xl">Your cart is empty</h1>
+      <div className="mx-4 md:mx-10 mt-8 mb-16 flex flex-col items-center bg-tint py-24 text-center">
+        <h1 className="display-type text-3xl">Your cart is empty</h1>
         <p className="mt-2 text-sm text-ink/60">Add items to your cart before checking out.</p>
         <Link
           href="/shop"
-          className="mt-6 flex items-center gap-2 bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
+          className="mt-6 flex items-center gap-2 bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
         >
           Browse the shop <ArrowRight className="h-4 w-4" />
         </Link>
@@ -92,7 +92,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="px-4 pt-10 md:px-10">
-      <h1 className="display-type text-5xl text-ink md:text-6xl">Checkout</h1>
+      <h1 className="display-type text-4xl text-ink md:text-4xl">Checkout</h1>
 
       <div className="mt-8 max-w-2xl">
         <CheckoutStepper currentStep={step} />

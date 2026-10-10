@@ -34,7 +34,7 @@ const isValid = (details: DeliveryDetails) =>
 const DeliveryForm = ({ details, onChange, onContinue }: DeliveryFormProps) => {
   return (
     <div className="flex-1">
-      <h2 className="display-type text-3xl">Delivery details</h2>
+      <h2 className="display-type text-2xl">Delivery details</h2>
 
       <div className="mt-6 space-y-4">
         {fields.map((field) => (
@@ -49,7 +49,7 @@ const DeliveryForm = ({ details, onChange, onContinue }: DeliveryFormProps) => {
               value={details[field.key]}
               placeholder={field.placeholder}
               onChange={(e) => onChange({ ...details, [field.key]: e.target.value })}
-              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-gold focus:outline-none"
+              className="mt-2 w-full border border-ink/20 bg-white px-4 py-3 text-sm placeholder:text-ink/30 focus:border-brand focus:outline-none"
             />
           </div>
         ))}
@@ -58,7 +58,7 @@ const DeliveryForm = ({ details, onChange, onContinue }: DeliveryFormProps) => {
       <button
         onClick={onContinue}
         disabled={!isValid(details)}
-        className="mt-6 flex w-full items-center justify-center gap-2 bg-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-40"
+        className="mt-6 flex w-full items-center justify-center gap-2 bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-40"
       >
         Continue to payment <ArrowRight className="h-4 w-4" />
       </button>

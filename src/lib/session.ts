@@ -3,7 +3,7 @@ import { jwtVerify } from "jose";
 // Kept separate from auth.ts (which pulls in Firestore) so src/proxy.ts can
 // check the session cookie without loading the database client.
 
-export const SESSION_COOKIE = "rtd_session";
+export const SESSION_COOKIE = "ofrank_session";
 
 export function getAuthSecret() {
   const secret = process.env.AUTH_SECRET;

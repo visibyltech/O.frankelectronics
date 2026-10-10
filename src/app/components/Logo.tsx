@@ -1,21 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
+import { SITE } from "@/lib/site";
 
 type LogoProps = {
   className?: string;
-  tone?: "dark" | "light";
   size?: "md" | "lg";
 };
 
-const Logo = ({ className = "", tone = "dark", size = "md" }: LogoProps) => {
+// The logo artwork has a white background, so it sits on white surfaces
+// (header, footer panel). Dark surfaces use the text wordmark instead.
+const Logo = ({ className = "", size = "md" }: LogoProps) => {
   return (
-    <Link
-      href="/"
-      aria-label="Fidex home"
-      className={`display-type leading-none tracking-tight ${
-        size === "lg" ? "text-6xl md:text-8xl" : "text-[1.75rem]"
-      } ${tone === "light" ? "text-cream" : "text-ink"} ${className}`}
-    >
-      FIDEX<span className="text-gold">.</span>
+    <Link href="/" aria-label={`${SITE.name} home`} className={`block shrink-0 ${className}`}>
+      <Image
+        src="/brand/logo.png"
+        alt={SITE.name}
+        width={700}
+        height={559}
+        priority
+        className={size === "lg" ? "h-24 w-auto" : "h-12 w-auto md:h-14"}
+      />
     </Link>
   );
 };
