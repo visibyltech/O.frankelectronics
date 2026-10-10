@@ -81,9 +81,22 @@ const Navbar = () => {
 
         <div className="ml-auto flex items-center gap-1 md:ml-0">
           {user ? (
-            <div className="group relative">
-              <Link href="/account" aria-label="My account" className={iconLink}>
+            <div className="group relative flex items-center gap-1">
+              {user.role === "admin" && (
+                <Link
+                  href="/admin"
+                  className="rounded-full bg-brand px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-white transition hover:bg-brand-dark"
+                >
+                  Admin
+                </Link>
+              )}
+              <Link
+                href="/account"
+                aria-label="My account"
+                className="flex items-center gap-2 px-2 text-sm font-medium whitespace-nowrap transition hover:text-brand"
+              >
                 <User className="h-5 w-5" />
+                <span className="hidden sm:inline">Hi, {user.name.split(" ")[0]}</span>
               </Link>
               <div className="invisible absolute top-full right-0 z-20 pt-2 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                 <div className="flex w-48 flex-col gap-3 rounded-xl border border-ink/10 bg-white p-4 text-sm shadow-lg">
