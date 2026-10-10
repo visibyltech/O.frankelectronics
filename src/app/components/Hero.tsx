@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CalendarCheck, PiggyBank } from "lucide-react";
+import { ArrowRight, CalendarCheck, ChevronLeft, ChevronRight, PiggyBank } from "lucide-react";
 import { whatsappUrl } from "@/lib/site";
 
 const SLIDES = [
@@ -77,6 +77,23 @@ const Hero = () => {
               </div>
             </div>
           ))}
+
+          <button
+            type="button"
+            aria-label="Previous banner"
+            onClick={() => setActive((a) => (a - 1 + SLIDES.length) % SLIDES.length)}
+            className="absolute top-1/2 left-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-brand-dark/80 text-white transition hover:bg-brand-dark"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            aria-label="Next banner"
+            onClick={() => setActive((a) => (a + 1) % SLIDES.length)}
+            className="absolute top-1/2 right-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-white transition hover:bg-brand-dark"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
 
           <div className="absolute right-0 bottom-4 left-0 flex justify-center gap-2">
             {SLIDES.map((slide, i) => (
