@@ -27,7 +27,7 @@ const Promotions = () => {
   if (products.length === 0) return null;
 
   return (
-    <section id="promotions" className="px-4 pt-12 md:px-10 md:pt-16">
+    <section id="promotions" className="px-4 pt-12 md:px-10 xl:px-[8%] md:pt-16">
       <h2 className="text-2xl font-normal text-ink md:text-[26px]">Promotions</h2>
 
       <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">

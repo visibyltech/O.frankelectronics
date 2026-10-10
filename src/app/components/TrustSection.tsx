@@ -9,7 +9,7 @@ const promises = [
 
 const TrustSection = () => {
   return (
-    <section className="mt-14 bg-tint px-4 py-10 md:mt-20 md:px-10 md:py-12">
+    <section className="mt-14 bg-tint px-4 py-10 md:mt-20 md:px-10 xl:px-[8%] md:py-12">
       <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {promises.map(({ icon: Icon, title, body }) => (
           <li key={title} className="flex items-start gap-4">

@@ -9,7 +9,8 @@
     "lint": "eslint",
     "db:seed-admin": "node --env-file=.env.local scripts/seed-admin.mjs",
     "db:seed-catalog": "node --env-file=.env.local scripts/seed-catalog.mjs",
-    "db:seed-products": "node --env-file=.env.local scripts/seed-products.mjs"
+    "db:seed-products": "node --env-file=.env.local scripts/seed-products.mjs",
+    "db:upload-photos": "node --env-file=.env.local scripts/upload-photos.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

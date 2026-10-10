@@ -40,7 +40,7 @@ const Footer = () => {
 
   return (
     <footer className="mt-14 bg-brand-dark text-white md:mt-20">
-      <div className="grid grid-cols-1 gap-12 px-4 pt-14 pb-10 md:px-10 lg:grid-cols-12">
+      <div className="grid grid-cols-1 gap-12 px-4 pt-14 pb-10 md:px-10 xl:px-[8%] lg:grid-cols-12">
         <div className="lg:col-span-5">
           <p className="display-type text-3xl">{SITE.name}</p>
           <p className="mt-1 text-sm text-white/70">{SITE.tagline}</p>
@@ -125,7 +125,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-white/15 px-4 py-6 text-xs text-white/60 md:px-10">
+      <div className="border-t border-white/15 px-4 py-6 text-xs text-white/60 md:px-10 xl:px-[8%]">
         © {new Date().getFullYear()} {SITE.name}. Quality products. Flexible payment. Total satisfaction.
       </div>
     </footer>

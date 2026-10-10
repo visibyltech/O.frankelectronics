@@ -10,7 +10,7 @@ const TILES = [
 ];
 
 const BrandsRow = () => (
-  <section className="px-4 pt-12 md:px-10 md:pt-16">
+  <section className="px-4 pt-12 md:px-10 xl:px-[8%] md:pt-16">
     <h2 className="text-2xl font-normal text-ink md:text-[26px]">Shop by Brand</h2>
     <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-[14px]">
       {BRANDS.slice(0, 5).map((brand, i) => (

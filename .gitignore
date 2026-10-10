@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# product photos are uploaded to Firestore by scripts/upload-photos.mjs
+/product-photos/

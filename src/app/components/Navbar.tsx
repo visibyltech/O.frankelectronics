@@ -57,7 +57,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-30 bg-white shadow-[0_1px_0_0_rgba(15,27,51,0.08)]">
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3 md:flex-nowrap md:gap-x-8 md:px-10">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3 md:flex-nowrap md:gap-x-8 md:px-10 xl:px-[8%]">
         <Logo />
 
         <form
@@ -118,15 +118,19 @@ const Navbar = () => {
             aria-label={`Cart, ${itemCount} items`}
             className="relative flex items-center gap-2 px-3 text-sm font-medium transition hover:text-brand"
           >
-            <ShoppingCart className="h-5 w-5" />
+            <span className="relative">
+              <ShoppingCart className="h-5 w-5" />
+              <span className="absolute -top-2.5 -left-2.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand px-1 text-[10px] font-bold text-white">
+                {itemCount}
+              </span>
+            </span>
             <span className="hidden sm:inline">Cart</span>
-            <span className={badge}>{itemCount}</span>
           </Link>
         </div>
       </div>
 
       <nav aria-label="Departments" className="border-t border-ink/10 bg-[#f7f7f7]">
-        <ul className="flex items-center gap-2 overflow-x-auto px-4 text-sm whitespace-nowrap md:px-10 [&::-webkit-scrollbar]:hidden">
+        <ul className="flex items-center gap-2 overflow-x-auto px-4 text-sm whitespace-nowrap md:px-10 xl:px-[8%] [&::-webkit-scrollbar]:hidden">
           <li>
             <Link
               href="/shop"
@@ -138,6 +142,11 @@ const Navbar = () => {
                 <Menu className="h-5 w-5" aria-hidden />
                 All Categories
               </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/#promotions" className="block px-3 py-4 text-ink transition hover:text-brand">
+              Promotions
             </Link>
           </li>
           {departments.map((department) => (

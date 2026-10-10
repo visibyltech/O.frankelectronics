@@ -43,13 +43,13 @@ const Hero = () => {
 
   return (
     <section>
-      <div className="px-4 pt-4 md:px-10">
+      <div className="px-4 pt-4 md:px-10 xl:px-[8%]">
         <div className="relative overflow-hidden rounded-3xl">
           {SLIDES.map((slide, i) => (
             <div
               key={slide.title}
               aria-hidden={i !== active}
-              className={`${i === active ? "relative opacity-100" : "pointer-events-none absolute inset-0 opacity-0"} grid grid-cols-1 items-center gap-6 px-6 py-10 transition-opacity duration-700 md:px-12 md:py-14 lg:grid-cols-2 ${slide.bg}`}
+              className={`${i === active ? "relative opacity-100" : "pointer-events-none absolute inset-0 opacity-0"} grid grid-cols-1 items-center gap-6 px-6 py-10 transition-opacity duration-700 md:min-h-[460px] md:px-20 md:py-14 lg:grid-cols-2 ${slide.bg}`}
             >
               <div>
                 <p className="text-xs font-bold tracking-widest uppercase text-brand-light">{slide.kicker}</p>
@@ -82,7 +82,7 @@ const Hero = () => {
             type="button"
             aria-label="Previous banner"
             onClick={() => setActive((a) => (a - 1 + SLIDES.length) % SLIDES.length)}
-            className="absolute top-1/2 left-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-brand-dark/80 text-white transition hover:bg-brand-dark"
+            className="absolute top-1/2 left-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-white transition hover:bg-brand-dark"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -109,7 +109,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 px-4 pt-4 md:grid-cols-2 md:gap-4 md:px-10">
+      <div className="grid grid-cols-1 gap-3 px-4 pt-4 md:grid-cols-2 md:gap-4 md:px-10 xl:px-[8%]">
         <div className="flex items-start gap-4 rounded-2xl bg-brand-dark p-5 text-white md:p-6">
           <CalendarCheck className="mt-1 h-8 w-8 shrink-0 text-brand-light" aria-hidden />
           <div>
