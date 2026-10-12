@@ -13,7 +13,7 @@ const Logo = ({ className = "", size = "md" }: LogoProps) => {
   return (
     <Link href="/" aria-label={`${SITE.name} home`} className={`block shrink-0 ${className}`}>
       <Image
-        src="/brand/logo.png"
+        src="/brand/ofrank-logo.png"
         alt={SITE.name}
         width={981}
         height={322}
