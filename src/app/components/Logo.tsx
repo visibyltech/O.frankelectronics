@@ -7,18 +7,18 @@ type LogoProps = {
   size?: "md" | "lg";
 };
 
-// The logo artwork has a white background, so it sits on white surfaces
-// (header, footer panel). Dark surfaces use the text wordmark instead.
+// Transparent cut-out of the 3D logo (source: public/brand/logo-source.jpg).
+// Its red and blue read best on white surfaces such as the header.
 const Logo = ({ className = "", size = "md" }: LogoProps) => {
   return (
     <Link href="/" aria-label={`${SITE.name} home`} className={`block shrink-0 ${className}`}>
       <Image
         src="/brand/logo.png"
         alt={SITE.name}
-        width={700}
-        height={559}
+        width={981}
+        height={322}
         priority
-        className={size === "lg" ? "h-24 w-auto" : "h-12 w-auto md:h-14"}
+        className={size === "lg" ? "h-20 w-auto" : "h-11 w-auto md:h-14"}
       />
     </Link>
   );

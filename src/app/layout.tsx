@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   description:
     "Televisions, laptops, phones, home and kitchen appliances and gadgets. Genuine products, reliable warranty, fast and safe delivery, flexible payment.",
-  icons: { icon: "/brand/logo.png" },
+  icons: { icon: "/brand/icon.png", apple: "/brand/icon.png" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
